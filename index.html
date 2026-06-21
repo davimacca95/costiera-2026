@@ -12,8 +12,13 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#FDF7E3;color:#333;line-height:1.5}
-.map-section{position:sticky;top:0;z-index:100;height:45vh;min-height:280px}
+.map-section{position:relative;z-index:100;height:0;overflow:hidden;transition:height 0.3s ease}
+.map-section.open{height:45vh;min-height:280px}
 #map{height:100%;width:100%}
+.map-toggle{position:sticky;top:0;z-index:101;background:linear-gradient(135deg,#2AA9A1,#1F4E79);color:#fff;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-size:14px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.15)}
+.map-toggle:active{opacity:0.9}
+.map-toggle .toggle-icon{font-size:18px;transition:transform 0.3s}
+.map-toggle.open .toggle-icon{transform:rotate(180deg)}
 .container{max-width:700px;margin:0 auto;padding:12px}
 .day-card{background:#fff;border-radius:12px;margin-bottom:16px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
 .day-header{color:#fff;padding:14px 16px}
@@ -55,7 +60,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#FDF7E3;c
 .area-tour-block::before{content:'🗺️ AREA TOUR';position:absolute;top:-10px;left:12px;background:#1565c0;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:8px}
 .daytour-block{border:2px solid #2e7d32;border-radius:10px;padding:10px;margin:8px 0;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);position:relative}
 .daytour-block::before{content:'💒 WEDDING';position:absolute;top:-10px;left:12px;background:#2e7d32;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:8px}
-.filter-bar{background:#fff;padding:8px 12px;display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:101}
+.filter-bar{background:#fff;padding:8px 12px;display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid #e0e0e0;position:sticky;top:42px;z-index:99}
 .map-btn{padding:5px 10px;border-radius:16px;border:1px solid #e0e0e0;background:#fff;font-size:12px;cursor:pointer;transition:all 0.2s}
 .map-btn.active{background:#2AA9A1;color:#fff;border-color:#2AA9A1}
 .emoji-marker{width:26px;height:26px;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,0.35);display:flex;align-items:center;justify-content:center;font-size:14px;line-height:1}
@@ -737,7 +742,11 @@ svg.leaflet-image-layer.leaflet-interactive path {
 </script>
 //# sourceMappingURL=leaflet.js.map</head>
 <body>
-<div class="map-section">
+<div class="map-toggle" id="mapToggle" onclick="toggleMap()">
+<span>🗺️ Mappa interattiva</span>
+<span class="toggle-icon">▼</span>
+</div>
+<div class="map-section" id="mapSection">
 <div id="map"></div>
 </div>
 <div class="filter-bar" id="filterBar"></div>
@@ -1348,6 +1357,28 @@ if('geolocation' in navigator){
 navigator.geolocation.watchPosition(function(pos){
 window._userPos={lat:pos.coords.latitude,lng:pos.coords.longitude};
 },function(){},{enableHighAccuracy:true});
+}
+
+
+function toggleMap(){
+var s=document.getElementById('mapSection');
+var t=document.getElementById('mapToggle');
+if(s.classList.contains('open')){
+s.classList.remove('open');
+t.classList.remove('open');
+t.querySelector('span').textContent='🗺️ Mappa interattiva';
+} else {
+s.classList.add('open');
+t.classList.add('open');
+t.querySelector('span').textContent='🗺️ Nascondi mappa';
+map.invalidateSize();
+}
+}
+// Auto-open map on desktop, closed on mobile
+if(window.innerWidth>768){
+document.getElementById('mapSection').classList.add('open');
+document.getElementById('mapToggle').classList.add('open');
+document.getElementById('mapToggle').querySelector('span').textContent='🗺️ Nascondi mappa';
 }
 
 if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js');
