@@ -1055,7 +1055,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
 <div class="alt-item"><span class="alt-icon">🍽️</span> <strong>12:30</strong> — Pescheria CICA (cuoppo) o La Tramontina (panino)</div>
 <div class="alt-item"><span class="alt-icon">⛴️</span> <strong>13:30</strong> — Ferry Amalfi → Positano (€8, 25min)</div>
 <div class="alt-item"><span class="alt-icon">🏖️</span> <strong>14:00–17:00</strong> — Spiaggia del Fornillo (3h mare! 🌊)</div>
-<div class="alt-item"><span class="alt-icon">🍽️</span> <strong>17:00</strong> — Drink/snack at La Zagara</div>
+<div class="alt-item"><span class="alt-icon">🍽️</span> <strong>14:30</strong> — Lunch: Da Ferdinando (ON the beach! €€)</div>
+<div class="alt-item"><span class="alt-icon">🍹</span> <strong>17:00</strong> — Franco's Bar (best sunset cocktails)</div>
 <div class="alt-item"><span class="alt-icon">⛴️</span> <strong>18:00</strong> — Ferry Positano → Salerno (~50min)</div>
 <div class="alt-note">⭐ CONSIGLIATO — vedi Amalfi + mare a Positano. Fornillo è la spiaggia locale, non turistica!</div>
 </div>
@@ -1063,7 +1064,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 <h4><span class="opt-badge">B</span> 🏖️ Solo Positano (pure beach day)</h4>
 <div class="alt-item"><span class="alt-icon">⛴️</span> <strong>11:00</strong> — Ferry diretto Salerno → Positano (~50min)</div>
 <div class="alt-item"><span class="alt-icon">🏖️</span> <strong>12:00–17:00</strong> — Spiaggia del Fornillo (5h relax! 🌊)</div>
-<div class="alt-item"><span class="alt-icon">🍽️</span> <strong>13:00</strong> — Lunch at La Zagara</div>
+<div class="alt-item"><span class="alt-icon">🍽️</span> <strong>13:00</strong> — Lunch: Da Ferdinando (beach) o Wine Shop panino (€)</div>
 <div class="alt-item"><span class="alt-icon">🛍️</span> <strong>17:00</strong> — Passeggiata Via Pasitea</div>
 <div class="alt-item"><span class="alt-icon">⛴️</span> <strong>18:00</strong> — Ferry back to Salerno</div>
 <div class="alt-note">😎 Se vuoi solo relax e mare. Fornillo ha meno gente della Spiaggia Grande.</div>
@@ -1205,7 +1206,16 @@ var places = [
 {"name":"Trattoria da Sasà","city":"Salerno","lat":40.6800,"lng":14.7570,"color":"#dec49a","desc":"Classic Salernitana cuisine. €€. Local favorite.","category":"Cibo","subcat":"Ristorante","icon":"🍽️","zone":"Centro Storico"},
 {"name":"Cicirinella","city":"Salerno","lat":40.6805,"lng":14.7582,"color":"#dec49a","desc":"Fine dining €€€. Top-rated Salerno restaurant.","category":"Cibo","subcat":"Ristorante","icon":"🍽️","zone":"Centro Storico"},
 {"name":"La Posteria","city":"Salerno","lat":40.6788,"lng":14.7568,"color":"#dec49a","desc":"Aperitivo bar in centro storico. Great for pre-dinner drinks.","category":"Cibo","subcat":"Ristorante","icon":"🍹","zone":"Centro Storico"},
-{"name":"Dolceria Pantaleone","city":"Salerno","lat":40.6796,"lng":14.7580,"color":"#dec49a","desc":"Famous for 'scazzetta' and 'dolce Strega'. Must-try pastries.","category":"Cibo","subcat":"Ristorante","icon":"🍰","zone":"Centro Storico"}
+{"name":"Dolceria Pantaleone","city":"Salerno","lat":40.6796,"lng":14.7580,"color":"#dec49a","desc":"Famous for 'scazzetta' and 'dolce Strega'. Must-try pastries.","category":"Cibo","subcat":"Ristorante","icon":"🍰","zone":"Centro Storico"},
+{"name":"Da Ferdinando","city":"Positano","lat":40.6270,"lng":14.4835,"color":"#dec49a","desc":"Beach restaurant ON Fornillo beach. Eat in swimsuit! Paranza, octopus salad, Spritz. €€. Local pick.","category":"Cibo","subcat":"Ristorante","icon":"🍽️","zone":"Positano"},
+{"name":"Wine Shop Vini e Panini","city":"Positano","lat":40.6282,"lng":14.4855,"color":"#dec49a","desc":"Deli with fresh panini to-go. Grab sandwich + cold wine, eat on beach. Best budget option. €.","category":"Cibo","subcat":"Ristorante","icon":"🥪","zone":"Positano"},
+{"name":"Chez Black","city":"Positano","lat":40.6280,"lng":14.4870,"color":"#dec49a","desc":"Celebrity spot since 1960s on Grande Beach. Fried calamaretti, spaghetti al nero di seppia. €€€.","category":"Cibo","subcat":"Ristorante","icon":"🍽️","zone":"Positano"},
+{"name":"Franco's Bar","city":"Positano","lat":40.6295,"lng":14.4860,"color":"#dec49a","desc":"Best sunset cocktails in Positano. Panoramic views over dome + coast. Min €20pp. Negroni!","category":"Cibo","subcat":"Ristorante","icon":"🍹","zone":"Positano"},
+{"name":"La Tagliata","city":"Positano","lat":40.6350,"lng":14.4800,"color":"#dec49a","desc":"Mountain farm restaurant above Positano. Meat, views, family-run. Taxi needed (10min). €€€.","category":"Cibo","subcat":"Ristorante","icon":"🍽️","zone":"Positano"},
+{"name":"Buca di Bacco","city":"Positano","lat":40.6278,"lng":14.4862,"color":"#dec49a","desc":"Historic pastry shop. Delizia al limone, sfogliatella, lemon granita inside a real lemon!","category":"Cibo","subcat":"Ristorante","icon":"🍰","zone":"Positano"},
+{"name":"Atrani Beach","city":"Atrani","lat":40.6360,"lng":14.6080,"color":"#a8c4d8","desc":"Only sandy beach on the Amalfi Coast! Tiny village next to Amalfi, much less touristy. Walk 5min from Amalfi.","category":"Visite","subcat":"Spiaggia","icon":"🏖️","zone":"Amalfi Centro"},
+{"name":"Duoglio Beach","city":"Amalfi","lat":40.6320,"lng":14.5980,"color":"#a8c4d8","desc":"Hidden cove west of Amalfi. Crystal water. Access: 400 steps down OR boat from Amalfi port. Worth it!","category":"Visite","subcat":"Spiaggia","icon":"🏖️","zone":"Amalfi Centro"},
+{"name":"Vietri sul Mare","city":"Vietri sul Mare","lat":40.6670,"lng":14.7290,"color":"#a8c4d8","desc":"Gateway to Amalfi Coast. Famous for hand-painted majolica ceramics. 10min drive from Salerno.","category":"Visite","subcat":"Piazza","icon":"🏺","zone":"Costiera"}
 ];
 
 var days = [
